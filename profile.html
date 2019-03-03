@@ -1,0 +1,61 @@
+<html>
+        <head>
+                <style>
+                #upform{
+                position: relative;
+                left:35%;
+                bottom: 2%;
+                }
+                #btn{
+                position: absolute;
+                width: 20%;
+                left:5%;
+                }
+                #notify{
+                position: relative;
+                left: 27%;
+                font-size:20px;
+                color:rgb(201, 65, 65);
+                }
+                .form-group{
+                    width:30%;
+                    padding: 1%;
+                }
+                input.ng-dirty.ng-invalid{
+                    border-color : red;
+                }
+                </style>
+                <title>Update Information</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        </head>
+<body>
+<h1 style="text-align:center">User Profile</h1>
+
+<h2 style="text-align:center">Update Information: </h2>
+<hr>
+<form name="updateform" id="upform">
+<div class="form-group">
+        Username:<br>
+        <input type="text" class="form-control" name="uname" ng-required="true" ng-minlength="2" ng-model="username"><br><br>
+
+        First Name:<br>
+        <input type="text" class="form-control" name="fname" ng-required="true" ng-minlength="2" ng-model="first"><br><br>
+
+        Last Name:<br>
+        <input type="text" class="form-control" name="lname" ng-required="true" ng-minlength="2" ng-model="last"><br><br>
+
+        Password:<br>
+        <input type="password" class="form-control" name="pwd" ng-required="true" ng-minlength="2" ng-model="password"><br><br>
+
+        Email:<br>
+        <input type="email" class="form-control" name="eid" ng-required="true" ng-minlength="2" ng-model="emaild"
+        ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"><br><br>
+
+        location:<br>
+        <input type="text" class="form-control" name="address" ng-required="true" ng-minlength="2" ng-model="address"><br><br>
+</div>
+<input id="btn" class="btn btn-primary" ng-disabled="updateform.$invalid" type="button" ng-click="updateUser()" value="Update">
+<label id="notify"></label>
+</form>
+</body>
+</html>

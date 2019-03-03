@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+
+</head>
+
+<body>
+<div class="app">
+        <div class="jumbotron">
+            
+          <div class="form-group">
+            <label for="senderName">From</label>
+            <input type="text" class="form-control" id="senderName" name="senderName" ng-model="sender" placeholder="enter receipient">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" class="form-control" ng-model="message" rows="4"></textarea>
+          </div>
+          <div class="alert alert-primary" ng-hide="alert.length==0" role="alert">
+            <strong>{{alert}}</strong>
+          </div>
+          <div class="form-group">
+              <label for="reply">Your Reply</label>
+              <textarea name="reply" class="form-control" ng-model="reply" rows="4"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="send()">reply</button>
+        </div>
+      
+      </div>
+    </body>
+</html>
+

@@ -1,0 +1,111 @@
+<html ng-app="signUpform" ng-cloak>
+    <head>
+        <title>Sign-up form</title>
+        <style>
+                [ng\:cloak], [ng-cloak], .ng-cloak{
+                    display:none;
+                }
+                input.ng-dirty.ng-invalid{
+                    border-color : red;
+                }
+                #sform{
+                position: relative;
+                left:35%;
+                bottom: 2%;
+                }
+                #notify{
+                font-size:20px;
+                color:rgb(201, 65, 65);
+                }
+                .form-group{
+                    padding: 1%;
+                }
+        </style>
+        <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    </head>
+    
+<body ng-controller="formVal">
+<h1 style="text-align:center">Sign up form</h1>
+<hr>
+<div class="form-group">
+<form name="userform" id="sform" ng-submit="saveUser(userinfo)">
+
+        <label>Username: </label><br>
+        <input type="text" name="uname" ng-model="userinfo.uname" ng-required="true" ng-minlength="2">
+
+        <span class="error-message" ng-show="userform.uname.$dirty && userform.uname.$error.required">
+        Must Enter a Username!</span>
+       
+        <span class="error-message" ng-show="userform.uname.$dirty && userform.uname.$error.minlength">
+        Must be a minimum of 2 Characters!</span>
+        
+        <br><br>
+
+        <label>First Name: </label><br>
+        <input type="text" name="fname" ng-model="userinfo.fname" ng-required="true" ng-minlength="2">
+
+        <span class="error-message" ng-show="userform.fname.$dirty && userform.fname.$error.required">
+        Must Enter a first Name!</span>
+       
+        <span class="error-message" ng-show="userform.fname.$dirty && userform.fname.$error.minlength">
+        Must be a minimum of 2 Characters!</span>
+
+        <br><br>
+
+        <label>Last Name: </label><br>
+        <input type="text" name="lname" ng-model="userinfo.lname" ng-required="true" ng-minlength="2">
+
+        <span class="error-message"
+        ng-show="userform.lname.$dirty && userform.lname.$error.required"> Must Enter a Last Name!</span>
+       
+        <span class="error-message"
+        ng-show="userform.lname.$dirty && userform.lname.$error.minlength">
+        Must be a minimum of 2 Characters!</span>
+
+        <br><br>
+
+        <label>Password: </label><br>
+        <input type="password" name="pwd" ng-model="userinfo.pwd" ng-required="true" ng-minlength="2">
+
+        <span class="error-message"
+        ng-show="userform.pwd.$dirty && userform.pwd.$error.required">
+        Must Enter a password!</span>
+       
+        <span class="error-message"
+        ng-show="userform.pwd.$dirty && userform.pwd.$error.minlength && userform.pwd.$error.maxlength">
+        Must be a minimum of 6-8 Characters!</span>
+
+        <br><br>
+
+        <label>Email: </label><br>
+        <input type="text" name="eid" ng-model="userinfo.eid" ng-required="true" ng-minlength="2"
+        ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+
+        <span class="error-message"
+        ng-show="userform.eid.$dirty && userform.eid.$error.required">
+        Enter email!</span>
+       
+        <span class="error-message"
+        ng-show="userform.eid.$dirty && userform.eid.$error.minlength">
+        Please enter a valid One</span>
+
+        <br><br>
+
+        <label>location: </label><br>
+        <input type="text" name="address" ng-model="userinfo.address" ng-required="true">
+
+        <span class="error-message"
+        ng-show="userform.address.$dirty && userform.address.$invalid">
+        Please Enter a Valid Address
+        </span>
+        <br><br>
+        <input class="btn btn-primary btn-lg" type="submit" id="btn1" value="Register" ng-disabled="userform.$invalid" >
+        <label id="notify"></label>
+</form>
+</div>
+<!-- <script src="Lapp.js"></script> -->
+</body>
+</html>

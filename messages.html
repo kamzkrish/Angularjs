@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Messages</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <style>
+    .left_container{
+        width:50%;
+        float:left;
+    }
+    .right_container{
+        width:50%;
+        float:right;
+    }
+    table, th, td{
+        /* column-span: 7; */
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    table{
+        width:100%;
+    }
+    </style>
+    </head>
+<body>
+<h1>Messages: </h1>
+<hr>
+<!-- <table id="msg-header">
+<tr>
+    <th>New Messages</th>
+</tr>
+<tr ng-repeat="">
+</tr>
+</table> -->
+<!-- Search for Messages: -->
+<!-- <input type="search" ng-model="q" placeholder="Search here..."/> -->
+<div class="left_container">
+
+    <div class="form-group">
+        To:    <input type="text" placeholder="Name" id="send_id" /><br><br>
+        Title: <input type="text" placeholder="Title" id="t_id" ><br><br>
+        <textarea rows="4" cols="40" id="con1" placeholder="Write here..."></textarea><br><br>
+        <input class="btn btn-primary" type="button" id="sndbtn" value="Send" ng-click="send_msg()" />
+        <input class="btn btn-primary" type="button" id="sndbtn2" value="Go Back" ng-click="goback()"/>
+        <label id="notify"></label>
+    </div>
+
+</div>
+<div class="right_container">
+<table>
+    <tr>
+        <th>Important</th>
+        <th>From</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    <tr ng-repeat="msg in msgs">
+        <td><img id="imgplus" width="25px" height="25px" src="pages/notify.png"
+            onmouseover="this.style.cursor='pointer'" ng-click="chngimg()"/>{{msg.important}}</td>
+        <td>{{msg.sender}}</td>
+        <td>{{msg.description}}</td>
+        <td>{{msg.created_at}}</td>
+        <td><input type="button" class="rbtn" id="repbtn" ng-click="rep_msg(msg)" value="Reply">
+            <input type="button" class="dbtn" id="delbtn" ng-click="del_msg(msg)" value="Delete">
+        </td>
+    </tr>
+    <!-- New Message: {{msg.sender}}<br>
+            Title: {{msg.title}}<br>
+            Description: {{msg.description}} -->
+</table>
+
+</div>
+</body>
+</html>

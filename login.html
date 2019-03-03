@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-cloak>
+<head>
+        <style>
+                [ng\:cloak], [ng-cloak], .ng-cloak{
+                    display:none;
+                }
+                input.ng-dirty.ng-invalid{
+                    border-color : red;
+                }
+                .form-group{
+                    width:50%;
+                }
+                #logform{
+                    position: relative;
+                    left:30%;
+                }
+                #notify{
+                position:absolute;
+                left:31%;
+                font-size:20px;
+                color:rgb(201, 65, 65);
+                }
+                .input{
+                    width: 50%;
+                    padding: 1%;
+                }
+        </style>
+    <title>Angular JS - Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+</head>
+<body ng-app="loginapp">
+    <div class="container">
+        <h1 style="text-align:center">Angular App</h1>
+        <div ng-controller="login-controller">
+        <hr>
+        <form name="loginform" id="logform">
+            <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="username" ng-required="true"
+                    ng-model="username" minlength="2"/>
+                    
+            </div>
+
+            <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" ng-required="true" placeholder="pass"
+                    minlength="2" ng-model="password"/>
+                </div>
+                    <button class="btn btn-sucess" ng-disabled="loginform.$invalid" ng-click="login_auth()">Login</button>
+                    <button class="btn btn-sucess" id="reg" ng-click="regUser()">Register</button><br>
+            </form><br>
+            <label id="notify"></label>
+        </div>
+    </div>
+
+
+<!-- <script src="login.js"></script> -->
+</body>
+</html>

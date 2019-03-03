@@ -1,0 +1,13 @@
+<div class="container">
+    <div>
+        <a class="btn btn-primary btn-lg btn-block align-top" href="#/newMessage">compose a message</a>
+    </div>
+    <div class="jumbotron">
+        <a href="#viewMessage/{{message.sender}}/{{message.message}}/{{$index}}" class="list-group-item" ng-repeat="message in messages track by $index">
+            <h4 class="list-group-item-heading">{{message.sender}}</h4>
+            <p class="list-group-item-text">
+                {{message.message}}
+            </p>
+        </a>    
+    </div>
+</div>

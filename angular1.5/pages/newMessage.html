@@ -1,0 +1,10 @@
+<div class="container">
+    <input type="text" name="senderName" ng-model="recipient" placeholder="enter receipient">
+    <div>
+        <textarea name="message" ng-model="message" cols="30" rows="10"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="send()">send</button>
+    <div class="alert alert-primary" ng-hide="alert.length==0" role="alert">
+            <strong>{{alert}}</strong>
+        </div>
+</div>

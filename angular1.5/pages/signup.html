@@ -1,0 +1,42 @@
+<div class="container">
+    <h1 style="text-align:center;">SignUp here</h1>
+    <div style="width: 30%; margin:25px auto;">
+            <div class="alert alert-primary" ng-hide="alert.length==0" role="alert">
+                    <strong>{{alert}}</strong>
+                </div>
+        <form >
+            <div class="form-group">
+                <input class="form-control" ng-model="user" type="text" name="username" placeholder="username">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="pass" type="password" name="password" placeholder="password">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="fname" type="text" name="firstName" placeholder="enter first name">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="lname" type="text" name="lastName" placeholder="enter last name">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="mail" type="email" name="email" placeholder="enter email id">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="phone" type="number" name="phone" placeholder="enter phone number">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" ng-model="location" type="text" name="location" placeholder="enter location">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" ng-click="signup()">SignUp</button>
+            </div>
+        </form>
+        <a href="#/">Login</a>
+    </div>
+</div>

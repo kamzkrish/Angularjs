@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="jumbotron">
+      <div class="d-flex justify-content-end">
+          <button class="btn btn-warning" ng-click="markAsImportant()">Mark as important</button>
+          <button class="btn btn-danger" ng-click="delete()">Delete</button>
+      </div>
+    <div class="form-group">
+      <label for="senderName">From</label>
+      <input type="text" class="form-control" id="senderName" name="senderName" ng-model="sender" placeholder="enter receipient">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea name="message" class="form-control" ng-model="message" rows="5"></textarea>
+    </div>
+    <div class="alert alert-primary" ng-hide="alert.length==0" role="alert">
+      <strong>{{alert}}</strong>
+    </div>
+    <div class="form-group">
+        <label for="reply">Your Reply</label>
+        <textarea name="reply" class="form-control" ng-model="reply" rows="5"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="send()">reply</button>
+  </div>
+
+</div>
